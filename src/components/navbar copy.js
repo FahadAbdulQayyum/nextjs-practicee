@@ -14,10 +14,12 @@ const Navbar = () => {
                 </span><span>
                 </span><span>
                 </span>
+                {/* <span className='invisible md:visible md:flex'> */}
                 {
                     !menu ?
                     <span className='flex'>
-                    <span className='hidden md:visible md:flex'>
+                    {/* <span className='hidden md:visible md:flex'> */}
+                    <span className={`hidden md:visible md:flex md:${setMenu(false)}`}>
                         <span className='flex md:space-x-10 md:mx-2 flex-col md:flex-row'>
                             <ul className='rounded-lg border-0 hover:border-b-2 hover:border-red-800 p-2 px-5 cursor-pointer hover:scale-105 duration-300'>
                                 <li>Home</li>
