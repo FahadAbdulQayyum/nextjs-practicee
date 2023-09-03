@@ -1,75 +1,52 @@
-import React, { useState } from 'react';
+// components/Navbar.tsx
+import { useState } from "react";
 
 const Navbar = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-    return (
-        <nav className="bg-rose-400 shadow">
-            <div className="container mx-auto px-4">
-                <div className="flex justify-between items-center py-4 relative">
-                    <div className="flex items-center">
-                        <span className="text-white text-lg font-bold">Logo</span>
-                    </div>
-                    <span className='bg-orange-300 absolute right-0 md:bg-transparent top-5'>
-                        <div
-                            className="md:hidden"
-                        >
-                            <button
-                                onClick={toggleMenu}
-                                className="block text-white hover:text-red-800 focus:outline-none">
-                                {menuOpen ? (
-                                    <svg
-                                        className="w-6 h-6"
-                                        fill="none"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor">
-                                        <path d="M6 18L18 6M6 6l12 12"></path>
-                                    </svg>
-                                ) : (
-                                    <svg
-                                        className="w-6 h-6"
-                                        fill="none"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor">
-                                        <path d="M4 6h16M4 12h16m-7 6h7"></path>
-                                    </svg>
-                                )}
-                            </button>
-                        </div>
-                        <div className={`md:flex md:items-center ${menuOpen ? 'block' : 'hidden'}`}>
-                            <ul className="md:flex space-x-4">
-                                <li>
-                                    <a
-                                        href="#"
-                                        className="text-white hover:text-red-800 font-medium">
-                                        Home
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        className="text-white hover:text-red-800 font-medium">
-                                        About
-                                    </a>
-                                </li>
-                                {/* Add more navigation links as needed */}
-                            </ul>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </nav>
-    );
+  return (
+    <nav className="bg-blue-500 p-4">
+      <div className="flex justify-between items-center">
+        <div className="text-white font-bold text-lg">Your Logo</div>
+        <button
+          className="lg:hidden text-white"
+          onClick={toggleMenu}
+        >
+          Menu
+        </button>
+        <ul
+          className={`${
+            isMenuOpen ? "block" : "hidden"
+          } lg:flex lg:space-x-4 space-y-4 lg:space-y-0 mt-4 lg:mt-0`}
+        >
+          <li>
+            <a className="text-white" href="#home">
+              Home
+            </a>
+          </li>
+          <li>
+            <a className="text-white" href="#about">
+              About
+            </a>
+          </li>
+          <li>
+            <a className="text-white" href="#services">
+              Services
+            </a>
+          </li>
+          <li>
+            <a className="text-white" href="#contact">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
