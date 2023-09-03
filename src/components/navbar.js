@@ -13,19 +13,15 @@ const Navbar = () => {
                 </span>
                 <span className='hidden md:flex-line'>
                     <span className='flex md:space-x-10 md:mx-2 flex-col md:flex-row'>
-                        {/* <ul className='rounded-lg border-2 hover:border-red-800 p-2 px-5 cursor-pointer hover:scale-105 duration-300'> */}
                         <ul className='rounded-lg border-0 hover:border-b-2 hover:border-red-800 p-2 px-5 cursor-pointer hover:scale-105 duration-300'>
                             <li>Home</li>
                         </ul>
-                        {/* <ul className='rounded-lg border-2 hover:border-red-800 p-2 px-5 cursor-pointer hover:scale-105 duration-300'> */}
                         <ul className='rounded-lg border-0 hover:border-b-2 hover:border-red-800 p-2 px-5 cursor-pointer hover:scale-105 duration-300'>
                             <li>Home</li>
                         </ul>
-                        {/* <ul className='rounded-lg border-2 hover:border-red-800 p-2 px-5 cursor-pointer hover:scale-105 duration-300'> */}
                         <ul className='rounded-lg border-0 hover:border-b-2 hover:border-red-800 p-2 px-5 cursor-pointer hover:scale-105 duration-300'>
                             <li>Home</li>
                         </ul>
-                        {/* <ul className='rounded-lg border-2 hover:border-red-800 p-2 px-5 cursor-pointer hover:scale-105 duration-300'> */}
                         <ul className='rounded-lg border-0 hover:border-b-2 hover:border-red-800 p-2 px-5 cursor-pointer hover:scale-105 duration-300'>
                             <li>Home</li>
                         </ul>
