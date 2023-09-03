@@ -1,50 +1,75 @@
 import React, { useState } from 'react';
 
 const Navbar = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
 
-    const [menu, setMenu] = useState(true);
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
 
     return (
-        <div className='flex bg-rose-400 fixed w-full text-white shadow'>
-            {/* <span className='flex w-full flex-col md:flex-row md:justify-between mx-10  m-5 cursor-default items-center'> */}
-            <span className='flex w-full flex-row justify-between mx-10  m-5 cursor-default items-center'>
-                <span>
-                    logo
-                </span><span>
-                </span><span>
-                </span><span>
-                </span><span>
-                </span>
-                {
-                    !menu &&
-                    <span className='flex'>
-                        {/* <span className='hidden md:visible md:flex'> */}
-                        <span className={`md:visible md:flex ${menu ? 'hidden' :'block'}`}>
-                            <span className='flex md:space-x-10 md:mx-2 flex-col md:flex-row'>
-                                <ul className='rounded-lg border-0 hover:border-b-2 hover:border-red-800 p-2 px-5 cursor-pointer hover:scale-105 duration-300'>
-                                    <li>Home</li>
-                                </ul>
-                                <ul className='rounded-lg border-0 hover:border-b-2 hover:border-red-800 p-2 px-5 cursor-pointer hover:scale-105 duration-300'>
-                                    <li>About</li>
-                                </ul>
-                                <ul className='rounded-lg border-0 hover:border-b-2 hover:border-red-800 p-2 px-5 cursor-pointer hover:scale-105 duration-300'>
-                                    <li>Work</li>
-                                </ul>
-                                <ul className='rounded-lg border-0 hover:border-b-2 hover:border-red-800 p-2 px-5 cursor-pointer hover:scale-105 duration-300'>
-                                    <li>Service</li>
-                                </ul>
-                            </span>
-                        </span>
-                        <span className='hidden md:visible md:flex'>
-                            <button>Button</button>
-                        </span>
-                    </span>}
-                <span className='md:hidden'>
-                    <button onClick={() => setMenu(!menu)}>Menu</button>
-                </span>
-            </span>
-        </div>
-    )
-}
+        <nav className="bg-rose-400 shadow">
+            <div className="container mx-auto px-4">
+                <div className="flex justify-between items-center py-4 relative">
+                    <div className="flex items-center">
+                        <span className="text-white text-lg font-bold">Logo</span>
+                    </div>
+                    <span className='bg-orange-300 absolute right-0 md:bg-transparent top-5'>
+                        <div
+                            className="md:hidden"
+                        >
+                            <button
+                                onClick={toggleMenu}
+                                className="block text-white hover:text-red-800 focus:outline-none">
+                                {menuOpen ? (
+                                    <svg
+                                        className="w-6 h-6"
+                                        fill="none"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path d="M6 18L18 6M6 6l12 12"></path>
+                                    </svg>
+                                ) : (
+                                    <svg
+                                        className="w-6 h-6"
+                                        fill="none"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path d="M4 6h16M4 12h16m-7 6h7"></path>
+                                    </svg>
+                                )}
+                            </button>
+                        </div>
+                        <div className={`md:flex md:items-center ${menuOpen ? 'block' : 'hidden'}`}>
+                            <ul className="md:flex space-x-4">
+                                <li>
+                                    <a
+                                        href="#"
+                                        className="text-white hover:text-red-800 font-medium">
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        className="text-white hover:text-red-800 font-medium">
+                                        About
+                                    </a>
+                                </li>
+                                {/* Add more navigation links as needed */}
+                            </ul>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    );
+};
 
-export default Navbar
+export default Navbar;
