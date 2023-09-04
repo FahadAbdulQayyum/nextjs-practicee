@@ -1,5 +1,6 @@
 // Next Link imported here
 import Link from 'next/link';
+// React and UseState import from react
 import React, { useState } from 'react';
 
 const Navbar = () => {
