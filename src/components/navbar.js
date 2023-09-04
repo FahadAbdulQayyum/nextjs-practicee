@@ -7,6 +7,7 @@ const Navbar = () => {
     // menuOpen is used as variable and setMenuOpen is used as a function in this case the default case is false
     const [menuOpen, setMenuOpen] = useState(false);
 
+    // Toggle Menu function
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
