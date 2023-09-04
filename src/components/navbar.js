@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 
 const Navbar = () => {
+    // menuOpen is used as variable and setMenuOpen is used as a function in this case the default case is false
     const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => {
