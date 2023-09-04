@@ -9,6 +9,7 @@ const Navbar = () => {
 
     // Toggle Menu function
     const toggleMenu = () => {
+        // setMenuOpen to be set inverse to what the menu's state is for now
         setMenuOpen(!menuOpen);
     };
 
